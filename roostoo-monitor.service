@@ -1,0 +1,8 @@
+[Unit]
+Description=Roostoo account monitor (Telegram snapshot)
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/ec2-user/roostoo/bot
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 monitor.py

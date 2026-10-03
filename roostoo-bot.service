@@ -1,0 +1,16 @@
+[Unit]
+Description=Roostoo hackathon trading bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ec2-user/roostoo/bot
+# .env next to the code is auto-loaded by roostoo_client.py
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 roostoo_bot.py
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target
